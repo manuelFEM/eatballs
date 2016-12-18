@@ -11,18 +11,20 @@ function draw() {
     background(0);
     ball.update();
     ball.show();
+    moving();
 }
 
+function moving() {
 
-function keyPressed() {
-    if (keyCode === RIGHT_ARROW) {
+    if (keyIsDown(RIGHT_ARROW))
         ball.move("right");
-        console.log("test");
-    } else if (keyCode === LEFT_ARROW) {
+
+    if (keyIsDown(LEFT_ARROW))
         ball.move("left");
-    }else if (keyCode === UP_ARROW) {
+
+    if (keyIsDown(UP_ARROW))
         ball.move("up");
-    }else if (keyCode === DOWN_ARROW) {
+
+    if (keyIsDown(DOWN_ARROW))
         ball.move("down");
-    }
 }

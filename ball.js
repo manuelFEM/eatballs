@@ -5,12 +5,12 @@
 function Ball() {
     this.xPosition = width/2;
     this.yPosition = height/2;
-    this.speed = 10;
+    this.speed = 7;
 
     this.show = function () {
         fill(255);
         ellipse(this.xPosition, this.yPosition, 30);
-    }
+    };
 
     this.update = function () {
 
@@ -30,7 +30,7 @@ function Ball() {
             this.xPosition = width;
         }
 
-    }
+    };
     
     this.move = function (direction) {
         switch (direction) {
@@ -47,7 +47,7 @@ function Ball() {
                 this.yPosition += this.speed;
                 break;
         }
-    }
+    };
 
 
 }
