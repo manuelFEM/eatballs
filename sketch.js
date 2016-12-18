@@ -8,13 +8,13 @@ function setup() {
 }
 
 function draw() {
-    background(0);
+    background(color(224, 220, 215));
     ball.update();
     ball.show();
-    moving();
+    keyStroke();
 }
 
-function moving() {
+function keyStroke() {
 
     if (keyIsDown(RIGHT_ARROW))
         ball.move("right");

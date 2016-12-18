@@ -6,9 +6,10 @@ function Ball() {
     this.xPosition = width/2;
     this.yPosition = height/2;
     this.speed = 7;
+    this.ballColor = setColor();
 
     this.show = function () {
-        fill(255);
+        fill(this.ballColor);
         ellipse(this.xPosition, this.yPosition, 30);
     };
 
@@ -49,5 +50,14 @@ function Ball() {
         }
     };
 
+    function setColor() {
+        colors = [
+            color(68, 100, 85),
+            color(253, 210, 98),
+            color(211, 221, 220),
+            color(199, 177, 156)
+        ];
 
+        return colors[Math.floor(Math.random() * colors.length)];
+    }
 }
