@@ -9,17 +9,17 @@ function setup() {
 }
 
 function draw() {
+    background(color(224, 220, 215));
+    keyStroke();
     background(0);
 
     for (var i = 0; i < balls.length; i++) {
         balls[i].show();
         balls[i].update();
     }
-
-    moving();
 }
 
-function moving() {
+function keyStroke() {
 
     if (keyIsDown(RIGHT_ARROW)) {
         for (var i = 0; i < balls.length; i++) {
