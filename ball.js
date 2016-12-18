@@ -14,21 +14,17 @@ function Ball() {
 
     this.update = function () {
 
-        if (this.yPosition > height) {
+        if (this.yPosition > height)
             this.yPosition = 0;
-        }
 
-        if (this.yPosition < 0) {
+        if (this.yPosition < 0)
             this.yPosition = height;
-        }
 
-        if (this.xPosition > width) {
+        if (this.xPosition > width)
             this.xPosition = 0;
-        }
 
-        if (this.xPosition < 0) {
+        if (this.xPosition < 0)
             this.xPosition = width;
-        }
 
     };
     
