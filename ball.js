@@ -5,12 +5,13 @@
 function Ball() {
     this.xPosition = width/2;
     this.yPosition = height/2;
-    this.speed = 7;
+    this.speed = 5;
+    this.diameter = 30;
     this.ballColor = setColor();
 
     this.show = function () {
         fill(this.ballColor);
-        ellipse(this.xPosition, this.yPosition, 30);
+        ellipse(this.xPosition, this.yPosition, this.diameter);
     };
 
     this.update = function () {
@@ -55,5 +56,14 @@ function Ball() {
         ];
 
         return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    this.hits = function (balls) {
+        for (var i = 0; i < balls.length - 1; i++) {
+            if (collideCircleCircle(this.xPosition, this.yPosition, this.diameter,
+                    balls[i].xPosition, balls[i].yPosition, balls[i].diameter)) {
+                return true;
+            }
+        }
     }
 }

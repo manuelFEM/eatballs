@@ -1,53 +1,48 @@
 var balls = [];
 
 function setup() {
-    height = 400;
-    width = 800;
+    height = 700;
+    width = 700;
     createCanvas(width, height);
     balls.push(new Ball());
     addBalls();
+
 }
 
 function draw() {
     background(color(224, 220, 215));
     keyStroke();
-    background(0);
-
+    if (balls[balls.length - 1].hits(balls)) {
+        balls.push(new Ball());
+    }
     for (var i = 0; i < balls.length; i++) {
         balls[i].show();
         balls[i].update();
     }
+
 }
 
 function keyStroke() {
 
     if (keyIsDown(RIGHT_ARROW)) {
-        for (var i = 0; i < balls.length; i++) {
-            balls[i].move("right");
-        }
+        balls[balls.length - 1].move("right");
     }
     if (keyIsDown(LEFT_ARROW)) {
-        for (var i = 0; i < balls.length; i++) {
-            balls[i].move("left");
-        }
+        balls[balls.length - 1].move("left");
     }
     if (keyIsDown(UP_ARROW)) {
-        for (var i = 0; i < balls.length; i++) {
-            balls[i].move("up");
-        }
+        balls[balls.length - 1].move("up");
     }
     if (keyIsDown(DOWN_ARROW)) {
-        for (var i = 0; i < balls.length; i++) {
-            balls[i].move("down");
-        }
+        balls[balls.length - 1].move("down");
     }
 
 }
 
 function addBalls() {
     setTimeout(function () {
-        if (balls.length < 10) {
-            balls.push(new Ball())
+        if (balls.length < 100) {
+            balls.push(new Ball());
             addBalls();
         }
     }, 1500);
